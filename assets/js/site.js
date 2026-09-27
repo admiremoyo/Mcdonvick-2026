@@ -44,9 +44,10 @@ const WHATSAPP_NUMBER = '263773234268';
   const video = document.getElementById('heroVideo');
   if (!video) return;
 
-  // Keep the poster image for reduced motion and slow / data-saver connections
+  // Keep the poster image for reduced motion, data-saver and 2G connections.
+  // 3G still gets the video: it's ~0.5 MB and only fades in once it can play.
   const conn = navigator.connection;
-  const slow = conn && (conn.saveData || /(^|-)(2g|3g)$/.test(conn.effectiveType || ''));
+  const slow = conn && (conn.saveData || /2g$/.test(conn.effectiveType || ''));
   if (slow || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   video.querySelectorAll('source[data-src]').forEach(source => { source.src = source.dataset.src; });
