@@ -1,0 +1,68 @@
+// Sectors shown on /industries/. `services` are slugs from services.mjs.
+
+export const industries = [
+  {
+    id: 'smes',
+    name: 'SMEs & start-ups',
+    icon: 'fas fa-rocket',
+    challenges: 'No in-house finance team, owners wearing every hat, and new registrations that are easy to get wrong.',
+    help: ['Company or PBC registration and ZIMRA setup', 'Simple monthly bookkeeping routines', 'Fixed monthly fees that fit a small budget'],
+    services: ['company-secretarial', 'accounting-bookkeeping', 'tax-advisory'],
+  },
+  {
+    id: 'retail',
+    name: 'Retail & wholesale',
+    icon: 'fas fa-store',
+    challenges: 'High transaction volumes, stock control, mixed US$ and ZiG takings, and VAT on every sale.',
+    help: ['Stock and cost-of-sales reconciliations', 'VAT returns and fiscalisation requirements', 'Margin and pricing reviews'],
+    services: ['accounting-bookkeeping', 'tax-advisory', 'business-consultancy'],
+  },
+  {
+    id: 'construction',
+    name: 'Construction & engineering',
+    icon: 'fas fa-helmet-safety',
+    challenges: 'Project-based costs, retentions, casual labour, and tender requirements such as a valid tax clearance.',
+    help: ['Job costing and project profitability', 'Payroll for permanent and contract workers', 'Tax clearance and tender documentation'],
+    services: ['accounting-bookkeeping', 'payroll', 'tax-advisory'],
+  },
+  {
+    id: 'agriculture',
+    name: 'Agriculture & farming',
+    icon: 'fas fa-seedling',
+    challenges: 'Seasonal cash flow, input financing, contract farming arrangements and uneven income across the year.',
+    help: ['Seasonal cash-flow planning and budgets', 'Records that support input finance applications', 'Farm accounts and tax returns'],
+    services: ['business-consultancy', 'accounting-bookkeeping', 'tax-advisory'],
+  },
+  {
+    id: 'ngos',
+    name: 'NGOs & non-profits',
+    icon: 'fas fa-hand-holding-heart',
+    challenges: 'Donor reporting, restricted funds, strict audit trails and budgets tracked grant by grant.',
+    help: ['Fund and grant accounting', 'Donor financial reports and budget-versus-actual', 'Audit preparation and payroll'],
+    services: ['accounting-bookkeeping', 'payroll', 'business-consultancy'],
+  },
+  {
+    id: 'transport',
+    name: 'Transport & logistics',
+    icon: 'fas fa-truck',
+    challenges: 'Fuel and vehicle costs, cross-border income, driver payroll and asset-heavy balance sheets.',
+    help: ['Vehicle and route cost tracking', 'Fixed asset registers and depreciation', 'Driver payroll, PAYE and NSSA'],
+    services: ['accounting-bookkeeping', 'payroll', 'tax-advisory'],
+  },
+  {
+    id: 'healthcare',
+    name: 'Healthcare & pharmacies',
+    icon: 'fas fa-stethoscope',
+    challenges: 'Medical aid receivables, stock with expiry dates, professional staff payroll and regulatory scrutiny.',
+    help: ['Medical aid debtor reconciliations', 'Stock and cost controls', 'Payroll and statutory compliance'],
+    services: ['accounting-bookkeeping', 'payroll', 'tax-advisory'],
+  },
+  {
+    id: 'services',
+    name: 'Professional services & tech',
+    icon: 'fas fa-laptop-code',
+    challenges: 'Project billing, foreign-currency clients, withholding taxes and growing teams.',
+    help: ['Invoicing and debtor management', 'Tax on services and foreign income', 'Management accounts for growth decisions'],
+    services: ['accounting-bookkeeping', 'tax-advisory', 'business-consultancy'],
+  },
+];

@@ -27,16 +27,17 @@ const WHATSAPP_NUMBER = '263773234268';
   nav?.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-  // Highlight the nav link for the section in view
-  const links = [...nav.querySelectorAll('a[href^="#"]:not(.btn)')];
-  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  // On the homepage, highlight the nav link for the section in view
+  const links = [...nav.querySelectorAll('a[href*="#"]:not(.btn)')]
+    .filter(a => a.pathname === location.pathname && document.getElementById(a.hash.slice(1)));
+  // Watch every section so the highlight clears in sections that have no nav link
   const spy = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      links.forEach(a => a.classList.toggle('active', a.hash === '#' + entry.target.id));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  sections.forEach(s => spy.observe(s));
+  if (links.length) document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
 })();
 
 /* ── HERO VIDEO ─────────────────────────────────────────────── */
